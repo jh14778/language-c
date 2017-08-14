@@ -1,15 +1,15 @@
 {
   "version": "0.58.1",
-  "name": "language-c",
-  "description": "Atom language support for C/C++",
-  "homepage": "https://atom.github.io/language-c",
+  "name": "language-xc",
+  "description": "Atom language support for XC",
+  "homepage": "https://atom.github.io/language-xc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/language-c.git"
+    "url": "https://github.com/jh14778/language-xc"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atom/language-c/issues"
+    "url": "https://github.com/jh14778/language-xc/issues"
   },
   "engines": {
     "atom": "*",
