@@ -43,7 +43,7 @@
     'name': 'variable.other.readwrite.static.mac-classic.xc'
   }
   {
-    'match': '\\b(NULL|true|false|TRUE|FALSE)\\b'
+    'match': '\\b(NULL|true|false|TRUE|FALSE|null)\\b'
     'name': 'constant.language.xc'
   }
   {
@@ -504,7 +504,7 @@
       |scanf|setbuf|setjmp|setlocale|setvbuf|signal|signbit|sinh?[fl]?|snprintf|sprintf|sqrt[fl]?|srand|sscanf
       |strcat|strchr|strcmp|strcoll|strcpy|strcspn|strerror|strftime|strlen|strncat|strncmp|strncpy|strpbrk
       |strrchr|strspn|strstr|strto[kdf]|strtoimax|strtol[dl]?|strtoull?|strtoumax|strxfrm|swprintf|swscanf
-      |system|tan|tan[fl]|tanh[fl]?|tgamma[fl]?|time|tmpfile|tmpnam|tolower|toupper|trunc[fl]?|ungetw?c|va_arg
+      |system|tan|tan[fl]|tanh[fl]?|tgamma[fl]?|tmpfile|tmpnam|tolower|toupper|trunc[fl]?|ungetw?c|va_arg
       |va_copy|va_end|va_start|vfw?printf|vfw?scanf|vprintf|vscanf|vsnprintf|vsprintf|vsscanf|vswprintf|vswscanf
       |vwprintf|vwscanf|wcrtomb|wcscat|wcschr|wcscmp|wcscoll|wcscpy|wcscspn|wcsftime|wcslen|wcsncat|wcsncmp|wcsncpy
       |wcspbrk|wcsrchr|wcsrtombs|wcsspn|wcsstr|wcsto[dkf]|wcstoimax|wcstol[dl]?|wcstombs|wcstoull?|wcstoumax|wcsxfrm
