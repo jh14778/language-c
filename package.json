@@ -8,9 +8,6 @@
     "url": "https://github.com/jh14778/language-xc"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jh14778/language-xc/issues"
-  },
   "engines": {
     "atom": "*",
     "node": "*"
