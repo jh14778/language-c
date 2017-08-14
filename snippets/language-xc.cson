@@ -13,7 +13,7 @@
     'body': '#if 0\n${1:#pragma mark -\n}#pragma mark $2\n#endif\n\n$0'
   'main()':
     'prefix': 'main'
-    'body': 'int main() {\n\t${1:/* code */}\n\treturn 0;\n}'
+    'body': 'int main(void) {\n\t${1:/* code */}\n\treturn 0;\n}'
   'For Loop':
     'prefix': 'for'
     'body': 'for (size_t ${1:i} = 0; ${1:i} < ${2:count}; ${1:i}${3:++}) {\n\t${4:/* code */}\n}'
@@ -44,9 +44,12 @@
   'Switch Statement':
     'prefix': 'switch'
     'body': 'switch (${1:/* expression */}) {\n\tcase ${2:/* value */}:\n}'
+  'Select Statement':
+    'prefix': 'select'
+    'body': 'select {\n\tcase ${1:/* value */} -> ${2:/* result */}:$0\n\t\tbreak;\n}'
   'case':
     'prefix': 'cs'
-    'body': 'case ${1:/* value */}:$0'
+    'body': 'case ${1:/* value */} -> ${2:/* result */}:$0\n\tbreak;'
   'Struct':
     'prefix': 'st'
     'body': 'struct ${1:name_t} {\n\t${2:/* data */}\n};'
