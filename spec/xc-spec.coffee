@@ -69,6 +69,9 @@ describe "Language-XC", ->
       {tokens} = grammar.tokenizeLine 'myType_t var;'
       expect(tokens[0]).toEqual value: 'myType_t', scopes: ['source.xc', 'support.type.posix-reserved.xc']
 
+      {tokens} = grammar.tokenizeLine 'myType_if var;'
+      expect(tokens[0]).toEqual value: 'myType_if', scopes: ['source.xc', 'support.type.xmos-reserved.xc']
+
     it "tokenizes 'line continuation' character", ->
       {tokens} = grammar.tokenizeLine 'ma' + '\\' + '\n' + 'in(){};'
       expect(tokens[0]).toEqual value: 'ma', scopes: ['source.xc']
@@ -935,6 +938,13 @@ describe "Language-XC", ->
             expect(tokens[1]).toEqual value: operator, scopes: ['source.xc', 'keyword.operator.assignment.compound.bitwise.xc']
             expect(tokens[2]).toEqual value: ' b', scopes: ['source.xc']
 
+        it "tokenizes channel read/write operators", ->
+          operatos = ['<:',':>']
+          for operator in operators
+            {tokens} = grammar.tokenizeLine('a ' + operator + 'b')
+            expect(tokens[0]).toEqual value: 'a ', scopes: ['source.xc']
+            expect(tokens[1]).toEqual value: operator, scopes: ['source.xc', 'keyword.operator.chan.xc']
+            expect(tokens[2]).toEqual value: ' b', scopes: ['source.xc']
   describe "C++", ->
     beforeEach ->
       grammar = atom.grammars.grammarForScopeName('source.cpp')

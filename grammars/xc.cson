@@ -19,7 +19,7 @@
     'include': '#comments'
   }
   {
-    'match': '\\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while|select|par)\\b'
+    'match': '\\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while|select|par|when)\\b'
     'name': 'keyword.control.xc'
   }
   {
@@ -252,6 +252,10 @@
     # Reserved POSIX types
     'match': '\\b([A-Za-z0-9_]+_t)\\b'
     'name': 'support.type.posix-reserved.xc'
+  }
+  {
+    'match': '\\b([A-Za-z0-9_]+_if)\\b'
+    'name': 'support.type.xmos-reserved.xc'
   }
   {
     'include': '#block'
@@ -605,6 +609,10 @@
         'name': 'keyword.operator.assignment.xc'
       }
       {
+        'match': '<:|:>'
+        'name': 'keyword.operator.chan.xc'
+      }
+      {
         'match': '%|\\*|/|-|\\+'
         'name': 'keyword.operator.xc'
       }
@@ -721,7 +729,7 @@
   'storage_types':
     'patterns': [
       {
-        'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|interface|chan|chanend)\\b'
+        'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|interface|chan|chanend|timer)\\b'
         'name': 'storage.type.xc'
       }
     ]
