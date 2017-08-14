@@ -59,3 +59,6 @@
   'any function':
     'prefix': 'func'
     'body': '${1:int} ${2:name}(${3:/* arguments */}) {\n\t${5:/* code */}\n\treturn ${4:0};\n}'
+  'task':
+    'prefix': 'task'
+    'body': 'void ${1:name}(${2:/* arguments */}) {\n\twhile(1) {\n\t\tselect {\n\t\t\tcase ${3:/* value */} -> ${4:/* result */}:$0\n\t\t\t\tbreak;\n\t\t}\n\t}\n}'
