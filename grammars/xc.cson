@@ -26,7 +26,7 @@
     'include': '#storage_types'
   }
   {
-    'match': '\\b(const|extern|register|restrict|static|volatile|inline|client|server|streaming|in|out)\\b'
+    'match': '\\b(auto|const|extern|register|restrict|static|volatile|inline|client|server|streaming|in|out)\\b'
     'name': 'storage.modifier.xc'
   }
   {
@@ -43,7 +43,7 @@
     'name': 'variable.other.readwrite.static.mac-classic.xc'
   }
   {
-    'match': '\\b(NULL|true|false|TRUE|FALSE|null)\\b'
+    'match': '\\b(null)\\b'
     'name': 'constant.language.xc'
   }
   {
@@ -266,7 +266,7 @@
   {
     # FIRST CAPTURE meta.function.c scope (provides an injectable scope, balanced parentheses and prevents unnecessary scope nesting)
     'begin': '''(?x)
-      (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|select)\\s*\\()
+      (?!(?:while|for|do|if|else|switch|enumerate|return|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|select)\\s*\\()
       (?=
         (?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name
         |
@@ -729,7 +729,7 @@
   'storage_types':
     'patterns': [
       {
-        'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|interface|chan|chanend|timer|port)\\b'
+        'match': '\\b(asm|__asm__|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void|interface|chan|chanend|timer|port)\\b'
         'name': 'storage.type.xc'
       }
     ]
@@ -911,7 +911,7 @@
         'include': '#operators'
       }
       {
-        'match': '\\b(NULL|true|false|TRUE|FALSE)\\b'
+        'match': '\\b(null)\\b'
         'name': 'constant.language.xc'
       }
       {
@@ -1527,7 +1527,7 @@
         # Function scope patterns for #define lines (terminates at newline w/o line_continuation_character)
         # FIRST CAPTURE meta.function.c scope (provides an injectable scope, balanced parentheses and prevents unnecessary scope nesting)
         'begin': '''(?x)
-          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()
+          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()
           (?=
             (?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name
             |
